@@ -84,7 +84,7 @@ HTTP Request
 | `repository` | Interface Spring Data JPA com o método de listagem |
 | `service` | Regras de negócio: salvar, listar com filtro |
 | `controller` | Rotas REST (POST/GET) |
-| `dto` (a definir em aula) | Objetos de entrada/saída da API, com validações de formato |
+| `dto` (definir com o grupo) | Objetos de entrada/saída da API, com validações de formato |
 
 ### 4.2 Entidade Marca (definição conceitual)
 
@@ -333,9 +333,9 @@ Repositório único no GitHub compartilhado pelo grupo (backend + frontend). Flu
 - [x] Scaffold do `back/`: Spring Boot 4 + Java 17, `pom.xml` com JPA, Web, Validation e PostgreSQL (feito na fase 0)
 - [x] Scaffold do `front/`: Angular standalone + primeng/primeicons/bootstrap (feito na fase 0)
 - [x] `provideHttpClient()` no `app.config.ts` (feito na fase 0)
-- [ ] Commit inicial de `back/` + `front/` (+ documentação) na `main`
-- [ ] Criar o repositório no GitHub + adicionar os integrantes (collaborators)
-- [ ] Proteger a `main` (require PR) — regra da seção 7
+- [X] Commit inicial de `back/` + `front/` (+ documentação) na `main`
+- [] Criar o repositório no GitHub + adicionar os integrantes (collaborators)
+- [X] Proteger a `main` (require PR) — regra da seção 7
 - [ ] Distribuir os papéis da seção 9.1 (nomes de cada integrante)
 - [ ] Revisar e mergear os PRs na ordem das fases (seção 9.2)
 - [ ] Conferir o checklist de entrega (seção 8) antes de entregar ao professor
