@@ -386,8 +386,8 @@ Proposta pensada para **máximo paralelismo** (ninguém parado) e **mínimo conf
 | **1** | **Ryquelme — Integração/Validação** | Criar o repo no GitHub, proteger a `main`, base dos 2 projetos (backend via Spring Initializr, front via `ng new` no formato standalone), publicar o contrato da seção 6, revisar e aprovar todos os PRs | — (atua na `main`) |  |
 | **2** | **Infra/Configurador** | PostgreSQL (criar banco `cadastro`), `application.properties`, habilitar CORS no backend, README do grupo com setup de ambiente | `feature/config-banco-cors` | Lucas |
 | **3** | **Backend — Entidade** | Entidade `Marca` mapeada com JPA + Bean Validation (nome obrigatório/tamanho, CNPJ obrigatório) | `feature/marca-entidade` | Ariel |
-| **4** | **Backend — Repository** | Interface `MarcaRepository` + o método das **10 primeiras ocorrências alfabéticas via filtro** (núcleo da exigência da etapa) | `feature/marca-repository` | Ryquelme |
-| **5** | **Backend — Service** | Regras: salvar (trim, normalizar filtro nulo→vazio), listar top 10; DTOs de entrada/saída | `feature/marca-service` | A decidir |
+| **4** | **Backend — Repository** | Interface `MarcaRepository` + o método das **10 primeiras ocorrências alfabéticas via filtro** (núcleo da exigência da etapa) | `feature/marca-repository` | A decidir |
+| **5** | **Backend — Service** | Regras: salvar (trim, normalizar filtro nulo→vazio), listar top 10; DTOs de entrada/saída | `feature/marca-service` | Samuel |
 | **6** | **Backend — Controller** | Rotas `POST /api/marcas` (201) e `GET /api/marcas?filtro=` (200/`[]`), status codes corretos, teste no Postman com prints no PR | `feature/marca-controller` | A decidir |
 | **7** | **Frontend — Comunicação** | `marca.model.ts` (espelho do contrato), `marca.service.ts` (HttpClient), `environment.ts` — **trabalha em paralelo**, só o merge espera o controller existir | `feature/front-service` | Luiz |
 | **8** | **Frontend — Formulário** | Tela de cadastro: Reactive Forms + validators (obrigatório, tamanho, formato CNPJ), bloqueio de envio inválido, Toast de feedback, layout Bootstrap + PrimeNG | `feature/front-formulario` | Gabriel |
