@@ -162,37 +162,7 @@ A listagem deve:
   o filtro não for informado.
 - Retornar um array vazio quando não houver resultados.
 
-As rotas estão implementadas em `MarcaController`, passando por
-`MarcaService` e `MarcaRepository` até a entidade `Marca` (tabela `marcas`).
-
-### Exemplo de cadastro
-
-Envie `POST http://localhost:8080/api/marcas` com `Content-Type: application/json`:
-
-```json
-{
-  "nome": "Marca Exemplo",
-  "cnpj": "12.345.678/0001-95"
-}
-```
-
-O retorno é `201 Created`, com `id`, `nome` e `cnpj`. O cadastro recebe
-e retorna a própria entidade, sem DTOs, validações ou tratamento de erros
-personalizado. O CNPJ é salvo como enviado, sem remover a máscara.
-As validações de entrada ficam para a parte responsável do grupo.
-
-O mapeamento básico da tabela define nome com até 150 caracteres e CNPJ
-com até 18 caracteres, não nulos, mantendo a unicidade do CNPJ no banco.
-
-### Testes das camadas
-
-```powershell
-.\mvnw.cmd "-Dtest=MarcaIntegrationTests" test
-```
-
-Esses testes usam H2 em memória, sem alterar o PostgreSQL local, e verificam
-cadastro e listagem com e sem filtro.
-O teste de inicialização original continua dependendo do PostgreSQL.
+As rotas dependem da implementação das respectivas camadas pelo grupo.
 
 ## Problemas comuns
 
