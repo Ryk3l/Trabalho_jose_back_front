@@ -1,0 +1,63 @@
+<p-toast />
+
+<main class="container my-4">
+  <div class="row justify-content-center">
+    <div class="col-12 col-md-8 col-lg-6">
+
+      <div class="card">
+        <div class="card-body">
+          <h1 class="h4 mb-3">Cadastro de Marca</h1>
+
+          <form [formGroup]="form" (ngSubmit)="enviar()" novalidate>
+            <div class="row g-3">
+              <div class="col-12">
+                <label class="form-label" for="nome">Nome</label>
+                <input
+                  pInputText
+                  id="nome"
+                  formControlName="nome"
+                  maxlength="150"
+                  placeholder="Ex.: Distribuidora Central"
+                  class="w-100"
+                  [class.p-invalid]="erroNome() !== null"
+                />
+                @if (erroNome(); as mensagem) {
+                  <div class="text-danger small mt-1">{{ mensagem }}</div>
+                }
+              </div>
+
+              <div class="col-12">
+                <label class="form-label" for="cnpj">CNPJ</label>
+                <input
+                  pInputText
+                  id="cnpj"
+                  formControlName="cnpj"
+                  maxlength="18"
+                  placeholder="00.000.000/0000-00"
+                  class="w-100"
+                  [class.p-invalid]="erroCnpj() !== null"
+                />
+                @if (erroCnpj(); as mensagem) {
+                  <div class="text-danger small mt-1">{{ mensagem }}</div>
+                }
+              </div>
+
+              <div class="col-12">
+                <p-button
+                  type="submit"
+                  label="Salvar"
+                  icon="pi pi-check"
+                  [loading]="enviando()"
+                  [disabled]="form.invalid || enviando()"
+                />
+              </div>
+            </div>
+          </form>
+        </div>
+      </div>
+
+      <app-marca-lista />
+
+    </div>
+  </div>
+</main>

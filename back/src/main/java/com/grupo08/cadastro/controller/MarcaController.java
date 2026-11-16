@@ -1,6 +1,7 @@
 package com.grupo08.cadastro.controller;
 
-import com.grupo08.cadastro.entity.Marca;
+import com.grupo08.cadastro.dto.MarcaRequest;
+import com.grupo08.cadastro.dto.MarcaResponse;
 import com.grupo08.cadastro.service.MarcaService;
 import jakarta.validation.Valid;
 import java.util.HashMap;
@@ -30,15 +31,15 @@ public class MarcaController {
 
     
     @PostMapping
-    public ResponseEntity<Marca> inserir(@Valid @RequestBody Marca marca) {
-        Marca marcaSalva = marcaService.salvar(marca);
+    public ResponseEntity<MarcaResponse> inserir(@Valid @RequestBody MarcaRequest request) {
+        MarcaResponse marcaSalva = marcaService.salvar(request);
         return ResponseEntity.status(HttpStatus.CREATED).body(marcaSalva);
     }
 
 
     @GetMapping
-    public ResponseEntity<List<Marca>> listar(@RequestParam(required = false) String filtro) {
-        List<Marca> marcas = marcaService.listar(filtro);
+    public ResponseEntity<List<MarcaResponse>> listar(@RequestParam(required = false) String filtro) {
+        List<MarcaResponse> marcas = marcaService.listar(filtro);
         return ResponseEntity.ok(marcas);
     }
 

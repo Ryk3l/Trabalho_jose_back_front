@@ -135,41 +135,41 @@ Comportamento definido pelo Service: **se o filtro não vier na requisição, a 
 
 #### #2 Infra/Configurador — branch `feature/config-banco-cors` (Fase 0)
 
-- [ ] Criar o banco `cadastro` no PostgreSQL
-- [ ] Preencher o `application.properties` (url/usuario/senha, `ddl-auto`, `show-sql`)
-- [ ] Habilitar CORS para o frontend (`http://localhost:4200`)
-- [ ] README do grupo com o passo a passo de setup (banco + senha própria de cada máquina)
-- [ ] `.\mvnw.cmd clean verify` passando
-- [ ] Abrir o PR (primeiro merge da fase 0)
+- [x] Criar o banco `cadastro` no PostgreSQL
+- [x] Preencher o `application.properties` (url/usuario/senha, `ddl-auto`, `show-sql`)
+- [x] Habilitar CORS para o frontend (`http://localhost:4200`)
+- [x] README do grupo com o passo a passo de setup (banco + senha própria de cada máquina)
+- [x] `.\mvnw.cmd clean verify` passando
+- [x] Abrir o PR (primeiro merge da fase 0)
 
 #### #3 Entidade — branch `feature/marca-entidade` (Fase 1)
 
-- [ ] Criar o pacote `entity` dentro de `com.grupo08.cadastro`
-- [ ] Entidade Marca: `@Entity`, tabela `marcas`, id auto incremento, `nome`, `cnpj`
-- [ ] Validações de obrigatório/tamanho (caso o grupo mantenha validação no backend)
-- [ ] Getters e setters (ou Lombok — decisão pendente do grupo)
-- [ ] `.\mvnw.cmd compile` sem erros + abrir o PR
+- [x] Criar o pacote `entity` dentro de `com.grupo08.cadastro`
+- [x] Entidade Marca: `@Entity`, tabela `marcas`, id auto incremento, `nome`, `cnpj`
+- [x] Validações de obrigatório/tamanho (caso o grupo mantenha validação no backend)
+- [x] Getters e setters (ou Lombok — decisão pendente do grupo)
+- [x] `.\mvnw.cmd compile` sem erros + abrir o PR
 
 #### #4 Repository — branch `feature/marca-repository` (Fase 1, após o merge do #3)
 
-- [ ] `MarcaRepository` (interface Spring Data JPA de `Marca`)
-- [ ] Método das **10 primeiras ocorrências em ordem alfabética via filtro** (as 3 regras da seção 4.3)
-- [ ] Provar o comportamento com filtro e sem filtro (sem filtro = 10 primeiras alfabéticas de tudo)
-- [ ] Abrir o PR
+- [x] `MarcaRepository` (interface Spring Data JPA de `Marca`)
+- [x] Método das **10 primeiras ocorrências em ordem alfabética via filtro** (as 3 regras da seção 4.3)
+- [x] Provar o comportamento com filtro e sem filtro (sem filtro = 10 primeiras alfabéticas de tudo)
+- [x] Abrir o PR
 
 #### #5 Service — branch `feature/marca-service` (Fase 1, depois do #4)
 
-- [ ] `salvar`: dados limpos (trim) + montar a entidade + chamar o repository
-- [ ] `listar`: filtro nulo → vazio + chamar o método do repository
-- [ ] DTOs de entrada/saída (se confirmado em aula)
-- [ ] Abrir o PR
+- [x] `salvar`: dados limpos (trim) + montar a entidade + chamar o repository
+- [x] `listar`: filtro nulo → vazio + chamar o método do repository
+- [x] DTOs de entrada/saída (se confirmado em aula)
+- [x] Abrir o PR
 
 #### #6 Controller — branch `feature/marca-controller` (Fase 1, depois do #5)
 
-- [ ] `POST /api/marcas` → `201 Created` | `GET /api/marcas?filtro=` → `200 OK` / `[]`
-- [ ] `@Valid` no POST
-- [ ] Teste no Postman com prints no PR: insert + listagem com filtro + sem filtro (vazio = `[]`)
-- [ ] Abrir o PR
+- [x] `POST /api/marcas` → `201 Created` | `GET /api/marcas?filtro=` → `200 OK` / `[]`
+- [x] `@Valid` no POST
+- [x] Teste no Postman com prints no PR: insert + listagem com filtro + sem filtro (vazio = `[]`)
+- [x] Abrir o PR
 
 ---
 
@@ -240,19 +240,24 @@ Usuário preenche o formulário
 
 #### #7 Comunicação — branch `feature/front-service` (Fase 0/2 — pode começar em paralelo)
 
-- [ ] Criar `environments/` (`ng generate environments`) + `apiUrl`: `http://localhost:8080/api`
-- [ ] `core/models/marca.model.ts` — espelho do contrato da API (seção 6.2)
-- [ ] `core/services/marca.service.ts`: inserir + listar com filtro (único lugar com `HttpClient` — já habilitado no `app.config.ts` na fase 0)
-- [ ] `ng build` sem erros + abrir o PR
+- [x] Criar `environments/` (`ng generate environments`) + `apiUrl`: `http://localhost:8080/api`
+- [x] `core/models/marca.model.ts` — espelho do contrato da API (seção 6.2)
+- [x] `core/services/marca.service.ts`: inserir + listar com filtro (único lugar com `HttpClient` — já habilitado no `app.config.ts` na fase 0)
+- [x] `ng build` sem erros + abrir o PR
 
 #### #8 Formulário — branch `feature/front-formulario` (Fase 2, após o merge do #7)
 
-- [ ] Componente standalone de cadastro (`pages/marca/...cadastro`)
-- [ ] Reactive Forms + validators: `nome` obrigatório/tamanho; `cnpj` obrigatório/formato
-- [ ] Envio bloqueado quando inválido + mensagem por campo
-- [ ] Toast de sucesso/erro (PrimeNG) + formulário reiniciado após salvar
-- [ ] Layout Bootstrap (`row`/`col`) + inputs/botão PrimeNG
-- [ ] Teste ponta a ponta com o backend: cadastrar de verdade + conferir o registro no banco — abrir o PR
+- [x] Componente standalone de cadastro (`pages/marca/...cadastro`)
+- [x] Reactive Forms + validators: `nome` obrigatório/tamanho; `cnpj` obrigatório/formato
+- [x] Envio bloqueado quando inválido + mensagem por campo
+- [x] Toast de sucesso/erro (PrimeNG) + formulário reiniciado após salvar
+- [x] Layout Bootstrap (`row`/`col`) + inputs/botão PrimeNG
+- [x] Teste ponta a ponta com o backend: cadastrar de verdade + conferir o registro no banco
+
+
+#### #9 Estilização — Arthur
+
+- [ ] Ajustes de estilização na tela, conforme ele decidir
 
 ---
 
@@ -290,11 +295,11 @@ O backend habilita a origem do frontend (em desenvolvimento `*` é aceitável; a
 
 ### 6.5 Checklist de integração (rodar os dois juntos)
 
-1. [ ] PostgreSQL rodando com o banco criado.
-2. [ ] Backend no ar respondendo em `:8080`.
-3. [ ] Frontend no ar em `:4200`.
-4. [ ] Teste no navegador: cadastrar marca → toast de sucesso → confirmar no banco/Postman.
-5. [ ] Teste do filtro: cadastrar nomes variados → listar por filtro → conferir o top 10 alfabético.
+1. [x] PostgreSQL rodando com o banco criado.
+2. [x] Backend no ar respondendo em `:8080`.
+3. [x] Frontend no ar em `:4200`.
+4. [x] Teste no navegador: cadastrar marca → toast de sucesso → confirmar no banco/Postman.
+5. [x] Teste do filtro: cadastrar nomes variados → listar por filtro → conferir o top 10 alfabético.
 
 ---
 
@@ -334,11 +339,11 @@ Repositório único no GitHub compartilhado pelo grupo (backend + frontend). Flu
 - [x] Scaffold do `front/`: Angular standalone + primeng/primeicons/bootstrap (feito na fase 0)
 - [x] `provideHttpClient()` no `app.config.ts` (feito na fase 0)
 - [X] Commit inicial de `back/` + `front/` (+ documentação) na `main`
-- [] Criar o repositório no GitHub + adicionar os integrantes (collaborators)
+- [x] Criar o repositório no GitHub + adicionar os integrantes (collaborators)
 - [X] Proteger a `main` (require PR) — regra da seção 7
-- [ ] Distribuir os papéis da seção 9.1 (nomes de cada integrante)
-- [ ] Revisar e mergear os PRs na ordem das fases (seção 9.2)
-- [ ] Conferir o checklist de entrega (seção 8) antes de entregar ao professor
+- [x] Distribuir os papéis da seção 9.1 (nomes de cada integrante)
+- [x] Revisar e mergear os PRs na ordem das fases (seção 9.2)
+- [x] Conferir o checklist de entrega (seção 8) antes de entregar ao professor
 
 ---
 
@@ -347,31 +352,30 @@ Repositório único no GitHub compartilhado pelo grupo (backend + frontend). Flu
 ### Backend
 
 - [X] Projeto Spring Boot 4 + Java 17 (Maven) no repositório.
-- [ ] Arquitetura em camadas completa: entidade → repository → service → controller.
-- [ ] Repository com o método das **10 primeiras ocorrências em ordem alfabética via filtro**.
-- [ ] `POST /api/marcas` inserindo de fato no **PostgreSQL** (positivo confirmado no banco/Postman).
-- [ ] `GET /api/marcas?filtro=` retornando o top 10 alfabético.
-- [ ] Configuração do banco no projeto (application.properties).
-- [ ] Validações de entrada no backend (obrigatório/tamanho).
-- [ ] CORS habilitado para o frontend.
-- [ ] README do repo backend: configuração e como subir.
+- [x] Arquitetura em camadas completa: entidade → repository → service → controller.
+- [x] Repository com o método das **10 primeiras ocorrências em ordem alfabética via filtro**.
+- [x] `POST /api/marcas` inserindo de fato no **PostgreSQL** (positivo confirmado no banco/Postman).
+- [x] `GET /api/marcas?filtro=` retornando o top 10 alfabético.
+- [x] Configuração do banco no projeto (application.properties).
+- [x] Validações de entrada no backend (obrigatório/tamanho).
+- [x] CORS habilitado para o frontend.
+- [x] README do repo backend: configuração e como subir.
 
 ### Frontend
 
-- [ ] Projeto Angular **standalone** (sem NgModules) no repositório (Node 24).
-- [ ] Model tipado da Marca espelhando o contrato da API.
-- [ ] Service de comunicação com o backend definido (único lugar com `HttpClient`).
-- [ ] Formulário com validação (obrigatório/tamanho/formato CNPJ) e envio bloqueado quando inválido.
-- [ ] Envio real funcionando: cadastra de fato no banco via backend.
-- [ ] Visual: Bootstrap (grid) + PrimeNG (inputs, botão, mensagens/toast).
-- [ ] README do repo frontend: instalação e como subir.
+- [x] Projeto Angular **standalone** (sem NgModules) no repositório (Node 24).
+- [x] Model tipado da Marca espelhando o contrato da API.
+- [x] Service de comunicação com o backend definido (único lugar com `HttpClient`).
+- [x] Formulário com validação (obrigatório/tamanho/formato CNPJ) e envio bloqueado quando inválido.
+- [x] Envio real funcionando: cadastra de fato no banco via backend.
+- [x] Visual: Bootstrap (grid) + PrimeNG (inputs, botão, mensagens/toast).
+- [x] README do repo frontend: instalação e como subir.
 
 ### Geral
 
-- [ ] Documentação atualizada refletindo o que foi implementado.
-- [ ] PRs validados e aprovados na `main` antes da entrega.
-- [ ] Links dos repositórios entregues ao professor.
-- [ ] Demonstração possível: **cadastrar uma Marca via tela → confirmar no banco → listar com filtro → top 10 alfabético**.
+- [x] Documentação atualizada refletindo o que foi implementado.
+- [X] PRs validados e aprovados na `main` antes da entrega.
+- [x] Demonstração possível: **cadastrar uma Marca via tela → confirmar no banco → listar com filtro → top 10 alfabético**.
 
 ---
 
@@ -386,13 +390,14 @@ Proposta pensada para **máximo paralelismo** (ninguém parado) e **mínimo conf
 | **1** | **Ryquelme — Integração/Validação** | Criar o repo no GitHub, proteger a `main`, base dos 2 projetos (backend via Spring Initializr, front via `ng new` no formato standalone), publicar o contrato da seção 6, revisar e aprovar todos os PRs | — (atua na `main`) |  |
 | **2** | **Infra/Configurador** | PostgreSQL (criar banco `cadastro`), `application.properties`, habilitar CORS no backend, README do grupo com setup de ambiente | `feature/config-banco-cors` | Lucas |
 | **3** | **Backend — Entidade** | Entidade `Marca` mapeada com JPA + Bean Validation (nome obrigatório/tamanho, CNPJ obrigatório) | `feature/marca-entidade` | Ariel |
-| **4** | **Backend — Repository** | Interface `MarcaRepository` + o método das **10 primeiras ocorrências alfabéticas via filtro** (núcleo da exigência da etapa) | `feature/marca-repository` | A decidir |
+| **4** | **Backend — Repository** | Interface `MarcaRepository` + o método das **10 primeiras ocorrências alfabéticas via filtro** (núcleo da exigência da etapa) | `feature/marca-repository` | Felipe |
 | **5** | **Backend — Service** | Regras: salvar (trim, normalizar filtro nulo→vazio), listar top 10; DTOs de entrada/saída | `feature/marca-service` | Samuel |
-| **6** | **Backend — Controller** | Rotas `POST /api/marcas` (201) e `GET /api/marcas?filtro=` (200/`[]`), status codes corretos, teste no Postman com prints no PR | `feature/marca-controller` | A decidir |
+| **6** | **Backend — Controller** | Rotas `POST /api/marcas` (201) e `GET /api/marcas?filtro=` (200/`[]`), status codes corretos, teste no Postman com prints no PR | `feature/marca-controller` | Pedro |
 | **7** | **Frontend — Comunicação** | `marca.model.ts` (espelho do contrato), `marca.service.ts` (HttpClient), `environment.ts` — **trabalha em paralelo**, só o merge espera o controller existir | `feature/front-service` | Luiz |
-| **8** | **Frontend — Formulário** | Tela de cadastro: Reactive Forms + validators (obrigatório, tamanho, formato CNPJ), bloqueio de envio inválido, Toast de feedback, layout Bootstrap + PrimeNG | `feature/front-formulario` | Gabriel |
+| **8** | **Frontend — Formulário** | Tela de cadastro: Reactive Forms + validators (obrigatório, tamanho, formato CNPJ), bloqueio de envio inválido, Toast de feedback, layout Bootstrap + PrimeNG | `feature/front-formulario` | Ryquelme |
+| **9** | **Frontend — Estilização** | Ajustes de estilização na tela, a critério do Arthur | Branch livre | Arthur |
 
-> Os campos extras (cep, endereço, rua — seção 4.2) ficam **fora desta fase**: entram depois que o básico estiver de pé.
+> **Ajustes de divisão (registrados):** o papel #8 (formulário) não foi entregue pelo Gabriel e foi assumido pelo validador (#1) para destravar a Fase 3 — o checklist 5.5 #8 segue como referência do que foi implementado. O papel #9 (estilização) foi criado para o Arthur, com escopo aberto: ajustes visuais simples, como ele preferir.
 
 ### 9.2 Ordem de merges (cronograma em 4 fases)
 

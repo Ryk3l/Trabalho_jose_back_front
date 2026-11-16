@@ -1,6 +1,14 @@
 # Front
 
-This project was generated using [Angular CLI](https://github.com/angular/angular-cli) version 22.2.6.
+Aplicação Angular standalone do trabalho em grupo (cadastro de marcas).
+
+## Instalação
+
+Com o Node.js instalado, dentro da pasta `front`:
+
+```bash
+npm install
+```
 
 ## Development server
 

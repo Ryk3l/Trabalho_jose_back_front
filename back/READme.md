@@ -34,7 +34,7 @@ que contém o arquivo `pom.xml`.
 
 ## Configuração do banco de dados
 
-O grupo utiliza o banco `cadastro`, com o usuário `postegres`
+O grupo utiliza o banco `cadastro`, com o usuário `postgres`
 e a senha padrão combinada entre os integrantes.
 
 No pgAdmin:
@@ -62,7 +62,7 @@ Configure:
 spring.application.name=cadastro
 
 spring.datasource.url=jdbc:postgresql://localhost:5432/cadastro
-spring.datasource.username=postegres
+spring.datasource.username=postgres
 spring.datasource.password=SENHA_PADRAO_DO_GRUPO
 spring.datasource.driver-class-name=org.postgresql.Driver
 

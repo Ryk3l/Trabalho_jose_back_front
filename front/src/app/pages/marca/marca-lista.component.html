@@ -1,0 +1,33 @@
+<section class="mt-4">
+  <h2 class="h5 mb-3">
+    Marcas cadastradas
+    <span class="text-body-secondary fw-normal">(top 10 alfabético)</span>
+  </h2>
+
+  <div class="row g-2 align-items-center mb-3">
+    <div class="col">
+      <input
+        pInputText
+        type="text"
+        [(ngModel)]="filtro"
+        (keyup.enter)="atualizar()"
+        placeholder="Filtrar por nome..."
+        class="w-100"
+      />
+    </div>
+    <div class="col-auto">
+      <p-button label="Filtrar" icon="pi pi-search" [loading]="carregando()" (onClick)="atualizar()" />
+    </div>
+  </div>
+
+  <ul class="list-group">
+    @for (marca of marcas(); track marca.id) {
+      <li class="list-group-item d-flex justify-content-between align-items-center">
+        <span>{{ marca.nome }}</span>
+        <span class="text-body-secondary">{{ marca.cnpj }}</span>
+      </li>
+    } @empty {
+      <li class="list-group-item text-body-secondary">Nenhuma marca encontrada.</li>
+    }
+  </ul>
+</section>
